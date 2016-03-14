@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import FPPicker
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func initalize(){
+        FPConfig.sharedInstance().APIKey = "AosW5N6gqSqmSGWn9Ns0nz";
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
