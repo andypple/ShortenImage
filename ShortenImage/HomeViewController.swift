@@ -11,6 +11,8 @@ import FPPicker
 
 class HomeViewController: UIViewController {
 
+    var pickedImages: [FPMediaInfo] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,4 +41,20 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: FPPickerControllerDelegate {
+
+    func fpPickerController(pickerController: FPPickerController!, didFinishPickingMultipleMediaWithResults results: [AnyObject]!) {
+        let images = results as! [FPMediaInfo]
+
+        self.pickedImages = images.filter { (mediaInfo) -> Bool in
+            return mediaInfo.containsImageAtMediaURL()
+        }
+
+        dismissViewControllerAnimated(true) { () -> Void in
+        }
+    }
+
+    func fpPickerControllerDidCancel(pickerController: FPPickerController!) {
+        dismissViewControllerAnimated(true) { () -> Void in
+        }
+    }
 }
