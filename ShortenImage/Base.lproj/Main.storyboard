@@ -17,15 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhZ-Bf-Sk5">
-                                <rect key="frame" x="259" y="44" width="83" height="30"/>
-                                <state key="normal" title="Pick Images"/>
-                                <connections>
-                                    <action selector="showFilePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2b-49-pHc"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="9UJ-Hp-VFJ">
+                                <rect key="frame" x="50" y="30" width="500" height="69"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhZ-Bf-Sk5">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
+                                        <state key="normal" title="Pick Images"/>
+                                        <connections>
+                                            <action selector="showFilePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2b-49-pHc"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shorten image link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-eZ-ziY">
+                                        <rect key="frame" x="0.0" y="39" width="500" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="pU6-df-pb7"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9UJ-Hp-VFJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="E2D-Gj-noJ"/>
+                            <constraint firstItem="9UJ-Hp-VFJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="Meq-5A-pVQ"/>
+                            <constraint firstItem="9UJ-Hp-VFJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="VOj-T2-obQ"/>
+                            <constraint firstAttribute="trailing" secondItem="9UJ-Hp-VFJ" secondAttribute="trailing" constant="50" id="xqA-ut-nbw"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
