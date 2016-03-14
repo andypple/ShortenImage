@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		224E4BFEF7E29248E8614625 /* Pods_ShortenImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA7B9F5AD9EEC1D6782BFD0 /* Pods_ShortenImage.framework */; };
 		DED39C221C96FADC003A9F49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED39C211C96FADC003A9F49 /* AppDelegate.swift */; };
-		DED39C241C96FADC003A9F49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED39C231C96FADC003A9F49 /* ViewController.swift */; };
 		DED39C271C96FADC003A9F49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED39C251C96FADC003A9F49 /* Main.storyboard */; };
 		DED39C291C96FADC003A9F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED39C281C96FADC003A9F49 /* Assets.xcassets */; };
 		DED39C2C1C96FADC003A9F49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED39C2A1C96FADC003A9F49 /* LaunchScreen.storyboard */; };
 		DED39C371C96FADC003A9F49 /* ShortenImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED39C361C96FADC003A9F49 /* ShortenImageTests.swift */; };
 		DED39C421C96FADC003A9F49 /* ShortenImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED39C411C96FADC003A9F49 /* ShortenImageUITests.swift */; };
+		DEF5CCA81C97018B005433B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCA71C97018B005433B3 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 		DE2475351C96FF4D00C491BC /* ShortenImage-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShortenImage-Bridging-Header.h"; sourceTree = "<group>"; };
 		DED39C1E1C96FADC003A9F49 /* ShortenImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShortenImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED39C211C96FADC003A9F49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DED39C231C96FADC003A9F49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DED39C261C96FADC003A9F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DED39C281C96FADC003A9F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DED39C2B1C96FADC003A9F49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		DED39C3D1C96FADC003A9F49 /* ShortenImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShortenImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED39C411C96FADC003A9F49 /* ShortenImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortenImageUITests.swift; sourceTree = "<group>"; };
 		DED39C431C96FADC003A9F49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEF5CCA71C97018B005433B3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FBD68B1B4EF03C21D126BB75 /* Pods-ShortenImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortenImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortenImage/Pods-ShortenImage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,9 +122,9 @@
 		DED39C201C96FADC003A9F49 /* ShortenImage */ = {
 			isa = PBXGroup;
 			children = (
+				DEF5CCA71C97018B005433B3 /* HomeViewController.swift */,
 				DE2475351C96FF4D00C491BC /* ShortenImage-Bridging-Header.h */,
 				DED39C211C96FADC003A9F49 /* AppDelegate.swift */,
-				DED39C231C96FADC003A9F49 /* ViewController.swift */,
 				DED39C251C96FADC003A9F49 /* Main.storyboard */,
 				DED39C281C96FADC003A9F49 /* Assets.xcassets */,
 				DED39C2A1C96FADC003A9F49 /* LaunchScreen.storyboard */,
@@ -333,8 +333,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DED39C241C96FADC003A9F49 /* ViewController.swift in Sources */,
 				DED39C221C96FADC003A9F49 /* AppDelegate.swift in Sources */,
+				DEF5CCA81C97018B005433B3 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
