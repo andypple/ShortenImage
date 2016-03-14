@@ -13,9 +13,13 @@ class HomeViewController: UIViewController {
 
     var pickedImages: [FPMediaInfo] = []
 
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.imageCollectionView.delegate = self
+        self.imageCollectionView.dataSource = self
     }
     @IBAction func showFilePicker(sender: UIButton) {
         let fpController = FPPickerController()
@@ -49,12 +53,31 @@ extension HomeViewController: FPPickerControllerDelegate {
             return mediaInfo.containsImageAtMediaURL()
         }
 
-        dismissViewControllerAnimated(true) { () -> Void in
+        dismissViewControllerAnimated(true) { [unowned self] () -> Void in
+            self.imageCollectionView.reloadData()
         }
     }
 
     func fpPickerControllerDidCancel(pickerController: FPPickerController!) {
         dismissViewControllerAnimated(true) { () -> Void in
         }
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.pickedImages.count
+    }
+
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImageCell", forIndexPath: indexPath)
+
+        return cell
     }
 }
