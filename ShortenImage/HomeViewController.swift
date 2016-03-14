@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
         self.imageCollectionView.delegate = self
         self.imageCollectionView.dataSource = self
     }
+
     @IBAction func showFilePicker(sender: UIButton) {
         let fpController = FPPickerController()
         fpController.fpdelegate = self;
@@ -76,7 +77,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImageCell", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImageCell", forIndexPath: indexPath) as! ImageCollectionViewCell
+
+        let imageInfo = self.pickedImages[indexPath.row]
+        cell.imageViewer.image = UIImage(contentsOfFile: imageInfo.mediaURL.path!)
 
         return cell
     }
