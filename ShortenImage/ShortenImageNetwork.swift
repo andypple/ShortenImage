@@ -29,7 +29,7 @@ class ShortenImageNetwork {
     }
 
     func fetchGroup(url: String, completion: ([String] -> Void)) {
-        Alamofire.request(.GET, url)
+        Alamofire.request(.GET, url, parameters: ["type" : ""])
             .responseJSON { response in
                 if let JSON = response.result.value {
                     let imagesJSON = JSON as! NSDictionary
