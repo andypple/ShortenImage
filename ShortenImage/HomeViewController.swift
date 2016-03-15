@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
 
     var pickedImages: [FPMediaInfo] = []
 
-    @IBOutlet weak var shortenLinkTF: UITextField!
+    var shortenLinkTF: UITextField!
     @IBOutlet weak var imageCollectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -22,8 +22,13 @@ class HomeViewController: UIViewController {
         self.imageCollectionView.delegate = self
         self.imageCollectionView.dataSource = self
         self.imageCollectionView.backgroundColor = UIColor.clearColor()
+        self.shortenLinkTF = UITextField()
+        self.shortenLinkTF.backgroundColor = UIColor.lightGrayColor()
+        self.shortenLinkTF.text = "LKlkasjflksajdlf"
+//        self.navigationItem.titleView = shortenLinkTF
 
         self.shortenLinkTF.delegate = self
+        self.navigationController?.navigationBar.backgroundColor = UIColor(patternImage: UIImage(named: "navigation-bg")!)
     }
 
     @IBAction func showFilePicker(sender: UIButton) {
@@ -115,9 +120,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        if validateUrl(textField.text!) {
+        if validateUrl(textField.text!) {
             self.fetchGroup()
-//        }
+        }
 
         textField.resignFirstResponder()
         return true;
