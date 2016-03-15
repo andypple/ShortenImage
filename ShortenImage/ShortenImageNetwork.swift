@@ -17,23 +17,26 @@ struct NetworkConst {
 }
 
 class ShortenImageNetwork {
-    func createGroup(images: [String], completion: ((String) -> Void)) {
+    func createGroup(images: [String], completion: ((Bool, String) -> Void)) {
         let parameters = ["images" : images]
         Alamofire.request(.POST, NetworkConst.host + NetworkConst.createGroupAction, parameters: parameters)
             .responseJSON { response in
                 if let JSON = response.result.value {
                     let result = JSON as! NSDictionary
-                    completion(NetworkConst.host + NetworkConst.getGroupAction + "/\(result["id"] as! NSNumber)")
+                    completion(true, NetworkConst.host + NetworkConst.getGroupAction + "/\(result["id"] as! NSNumber)")
+                } else {
+                    completion(false, "Something went wrong")
                 }
         }
     }
 
-    func fetchGroup(url: String, completion: ([String] -> Void)) {
+    func fetchGroup(url: String, completion: ((Bool, [String]) -> Void)) {
         Alamofire.request(.GET, url, parameters: ["type" : ""])
             .responseJSON { response in
-                if let JSON = response.result.value {
-                    let imagesJSON = JSON as! NSDictionary
-                    completion(imagesJSON["images"] as! [String])
+                if let JSON = response.result.value as? NSDictionary {
+                    completion(true, JSON["images"] as! [String])
+                } else {
+                    completion(false, ["Something went wrong"])
                 }
         }
 

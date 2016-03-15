@@ -72,22 +72,38 @@ extension HomeViewController: FPPickerControllerDelegate {
         let imageURLs = self.pickedImages.map { (mediaInfo) -> String in
             return mediaInfo.remoteURL.absoluteString
         }
-        ShortenImageNetwork().createGroup(imageURLs,completion: { [unowned self] (link) -> Void in
-            self.shortenLinkTF.text = link
+        ShortenImageNetwork().createGroup(imageURLs,completion: { [unowned self] (success, text) -> Void in
+            if success {
+                self.shortenLinkTF.text = text
+            } else {
+                self.showErrorMessage(text)
+            }
         })
     }
 
     internal func fetchGroup() {
-        ShortenImageNetwork().fetchGroup(self.shortenLinkTF.text!) { (images) -> Void in
+        ShortenImageNetwork().fetchGroup(self.shortenLinkTF.text!) { [unowned self] (success, images) -> Void in
 
-            self.pickedImages = images.map({ (url) -> FPMediaInfo in
-                let media = FPMediaInfo()
-                media.remoteURL = NSURL(string: url)
-                return media
-            })
+            if success {
+                self.pickedImages = images.map({ (url) -> FPMediaInfo in
+                    let media = FPMediaInfo()
+                    media.remoteURL = NSURL(string: url)
+                    return media
+                })
 
-            self.imageCollectionView.reloadData()
+                self.imageCollectionView.reloadData()
+            } else {
+                self.showErrorMessage("Something went wrong")
+            }
         }
+    }
+
+    internal func showErrorMessage(message: String) {
+        let alertController = UIAlertController(title: "Error", message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }
 
@@ -132,6 +148,8 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if validateUrl(textField.text!) {
             self.fetchGroup()
+        } else {
+            showErrorMessage("Please enter valid link")
         }
 
         textField.resignFirstResponder()
