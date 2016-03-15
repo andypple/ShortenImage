@@ -10,14 +10,20 @@ import Foundation
 import UIKit
 import Alamofire
 
+struct NetworkConst {
+    static let host = "hptt://localhost:4000/api"
+    static let createGroupAction = "/create-group"
+    static let getGroupAction = "/group"
+}
+
 class ShortenImageNetwork {
     func createGroup(images: [String], completion: ((String) -> Void)) {
         let parameters = ["images" : images]
-        Alamofire.request(.POST, "http://localhost:4000/api/create-group", parameters: parameters)
+        Alamofire.request(.POST, NetworkConst.host + NetworkConst.createGroupAction, parameters: parameters)
             .responseJSON { response in
                 if let JSON = response.result.value {
                     let result = JSON as! NSDictionary
-                    completion("http://localhost:4000/api/group/\(result["id"] as! NSNumber)")
+                    completion(NetworkConst.host + NetworkConst.getGroupAction + "/\(result["id"] as! NSNumber)")
                 }
         }
     }
