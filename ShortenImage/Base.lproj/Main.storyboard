@@ -30,7 +30,7 @@
                                                     <constraint firstAttribute="width" constant="44" id="XLo-Dj-92J"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://shortenimage.herokuapp.com/api/group/2" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4V-Ka-CHL">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4V-Ka-CHL">
                                                 <rect key="frame" x="44" y="7" width="512" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.16944679054054054" colorSpace="calibratedRGB"/>
                                                 <constraints>
