@@ -27,7 +27,7 @@
                                             <action selector="showFilePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2b-49-pHc"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shorten image link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-eZ-ziY">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://localhost:4000/api/group/6" borderStyle="roundedRect" placeholder="Shorten image link" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yBQ-eZ-ziY">
                                         <rect key="frame" x="0.0" y="39" width="500" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>

@@ -21,6 +21,9 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.imageCollectionView.delegate = self
         self.imageCollectionView.dataSource = self
+        self.imageCollectionView.backgroundColor = UIColor.clearColor()
+
+        self.shortenLinkTF.delegate = self
     }
 
     @IBAction func showFilePicker(sender: UIButton) {
@@ -74,6 +77,19 @@ extension HomeViewController: FPPickerControllerDelegate {
             self.shortenLinkTF.text = link
         })
     }
+
+    internal func fetchGroup() {
+        ShortenImageNetwork().fetchGroup(self.shortenLinkTF.text!) { (images) -> Void in
+
+            self.pickedImages = images.map({ (url) -> FPMediaInfo in
+                let media = FPMediaInfo()
+                media.remoteURL = NSURL(string: url)
+                return media
+            })
+
+            self.imageCollectionView.reloadData()
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -91,8 +107,27 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImageCell", forIndexPath: indexPath) as! ImageCollectionViewCell
 
         let imageInfo = self.pickedImages[indexPath.row]
-        cell.imageViewer.image = UIImage(contentsOfFile: imageInfo.mediaURL.path!)
+        cell.configWithObject(imageInfo)
 
         return cell
+    }
+}
+
+extension HomeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        if validateUrl(textField.text!) {
+            self.fetchGroup()
+//        }
+
+        textField.resignFirstResponder()
+        return true;
+    }
+
+    func validateUrl (stringURL : NSString) -> Bool {
+
+        let urlRegEx = "http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&amp;=]*)?"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", argumentArray:[urlRegEx])
+
+        return predicate.evaluateWithObject(stringURL)
     }
 }

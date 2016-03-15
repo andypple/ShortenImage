@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 
 struct NetworkConst {
-    static let host = "hptt://localhost:4000/api"
+    static let host = "http://localhost:4000/api"
     static let createGroupAction = "/create-group"
     static let getGroupAction = "/group"
 }
@@ -26,5 +26,16 @@ class ShortenImageNetwork {
                     completion(NetworkConst.host + NetworkConst.getGroupAction + "/\(result["id"] as! NSNumber)")
                 }
         }
+    }
+
+    func fetchGroup(url: String, completion: ([String] -> Void)) {
+        Alamofire.request(.GET, url)
+            .responseJSON { response in
+                if let JSON = response.result.value {
+                    let imagesJSON = JSON as! NSDictionary
+                    completion(imagesJSON["images"] as! [String])
+                }
+        }
+
     }
 }
