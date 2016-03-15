@@ -14,6 +14,9 @@
 		DED39C2C1C96FADC003A9F49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED39C2A1C96FADC003A9F49 /* LaunchScreen.storyboard */; };
 		DED39C371C96FADC003A9F49 /* ShortenImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED39C361C96FADC003A9F49 /* ShortenImageTests.swift */; };
 		DED39C421C96FADC003A9F49 /* ShortenImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED39C411C96FADC003A9F49 /* ShortenImageUITests.swift */; };
+		DED864AA1C985315006F5CB6 /* NYTPhotoImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED864A91C985315006F5CB6 /* NYTPhotoImp.swift */; };
+		DED864AB1C985315006F5CB6 /* NYTPhotoImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED864A91C985315006F5CB6 /* NYTPhotoImp.swift */; };
+		DED864AC1C985315006F5CB6 /* NYTPhotoImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED864A91C985315006F5CB6 /* NYTPhotoImp.swift */; };
 		DEF5CCA81C97018B005433B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCA71C97018B005433B3 /* HomeViewController.swift */; };
 		DEF5CCAA1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCA91C970EED005433B3 /* ImageCollectionViewCell.swift */; };
 		DEF5CCAB1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCA91C970EED005433B3 /* ImageCollectionViewCell.swift */; };
@@ -56,6 +59,7 @@
 		DED39C3D1C96FADC003A9F49 /* ShortenImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShortenImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED39C411C96FADC003A9F49 /* ShortenImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortenImageUITests.swift; sourceTree = "<group>"; };
 		DED39C431C96FADC003A9F49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DED864A91C985315006F5CB6 /* NYTPhotoImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTPhotoImp.swift; sourceTree = "<group>"; };
 		DEF5CCA71C97018B005433B3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DEF5CCA91C970EED005433B3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEF5CCAD1C979B0C005433B3 /* ShortenImageNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortenImageNetwork.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				DED39C2D1C96FADC003A9F49 /* Info.plist */,
 				DEF5CCA91C970EED005433B3 /* ImageCollectionViewCell.swift */,
 				DEF5CCAD1C979B0C005433B3 /* ShortenImageNetwork.swift */,
+				DED864A91C985315006F5CB6 /* NYTPhotoImp.swift */,
 			);
 			path = ShortenImage;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				DEF5CCAA1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */,
 				DED39C221C96FADC003A9F49 /* AppDelegate.swift in Sources */,
 				DEF5CCA81C97018B005433B3 /* HomeViewController.swift in Sources */,
+				DED864AA1C985315006F5CB6 /* NYTPhotoImp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +363,7 @@
 				DEF5CCAB1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */,
 				DED39C371C96FADC003A9F49 /* ShortenImageTests.swift in Sources */,
 				DEF5CCAF1C979B0C005433B3 /* ShortenImageNetwork.swift in Sources */,
+				DED864AB1C985315006F5CB6 /* NYTPhotoImp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +374,7 @@
 				DEF5CCAC1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */,
 				DED39C421C96FADC003A9F49 /* ShortenImageUITests.swift in Sources */,
 				DEF5CCB01C979B0C005433B3 /* ShortenImageNetwork.swift in Sources */,
+				DED864AC1C985315006F5CB6 /* NYTPhotoImp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

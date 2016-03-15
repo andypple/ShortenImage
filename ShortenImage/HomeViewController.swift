@@ -8,6 +8,7 @@
 
 import UIKit
 import FPPicker
+import NYTPhotoViewer
 
 class HomeViewController: UIViewController {
 
@@ -113,6 +114,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let size = (CGRectGetWidth(self.view.bounds) - 8)/3
         return CGSizeMake(size, size)
+    }
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let nytPhotos = self.pickedImages.map { (mediaInfo) -> NYTPhoto in
+            return NYTPhotoImp(image: nil, imageData: NSData(contentsOfURL: mediaInfo.remoteURL), attributedCaptionTitle: NSAttributedString())
+        }
+        let nytController = NYTPhotosViewController(photos: nytPhotos)
+        self.presentViewController(nytController, animated: true) { () -> Void in
+
+        }
     }
 
 }
