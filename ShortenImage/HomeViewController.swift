@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
 
     var pickedImages: [FPMediaInfo] = []
 
-    var shortenLinkTF: UITextField!
+    @IBOutlet weak var shortenLinkTF: UITextField!
     @IBOutlet weak var imageCollectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -21,14 +21,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.imageCollectionView.delegate = self
         self.imageCollectionView.dataSource = self
-        self.imageCollectionView.backgroundColor = UIColor.clearColor()
-        self.shortenLinkTF = UITextField()
-        self.shortenLinkTF.backgroundColor = UIColor.lightGrayColor()
-        self.shortenLinkTF.text = "LKlkasjflksajdlf"
-//        self.navigationItem.titleView = shortenLinkTF
-
         self.shortenLinkTF.delegate = self
-        self.navigationController?.navigationBar.backgroundColor = UIColor(patternImage: UIImage(named: "navigation-bg")!)
     }
 
     @IBAction func showFilePicker(sender: UIButton) {
