@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
 
     var pickedImages: [FPMediaInfo] = []
 
+    @IBOutlet weak var shortenLinkTF: UITextField!
     @IBOutlet weak var imageCollectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -56,12 +57,22 @@ extension HomeViewController: FPPickerControllerDelegate {
 
         dismissViewControllerAnimated(true) { [unowned self] () -> Void in
             self.imageCollectionView.reloadData()
+            self.createGroup()
         }
     }
 
     func fpPickerControllerDidCancel(pickerController: FPPickerController!) {
         dismissViewControllerAnimated(true) { () -> Void in
         }
+    }
+
+    internal func createGroup() {
+        let imageURLs = self.pickedImages.map { (mediaInfo) -> String in
+            return mediaInfo.remoteURL.path!
+        }
+        ShortenImageNetwork().createGroup(imageURLs,completion: { [unowned self] (link) -> Void in
+            self.shortenLinkTF.text = link
+        })
     }
 }
 

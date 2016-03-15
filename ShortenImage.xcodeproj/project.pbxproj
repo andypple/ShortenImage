@@ -18,6 +18,9 @@
 		DEF5CCAA1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCA91C970EED005433B3 /* ImageCollectionViewCell.swift */; };
 		DEF5CCAB1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCA91C970EED005433B3 /* ImageCollectionViewCell.swift */; };
 		DEF5CCAC1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCA91C970EED005433B3 /* ImageCollectionViewCell.swift */; };
+		DEF5CCAE1C979B0C005433B3 /* ShortenImageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCAD1C979B0C005433B3 /* ShortenImageNetwork.swift */; };
+		DEF5CCAF1C979B0C005433B3 /* ShortenImageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCAD1C979B0C005433B3 /* ShortenImageNetwork.swift */; };
+		DEF5CCB01C979B0C005433B3 /* ShortenImageNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF5CCAD1C979B0C005433B3 /* ShortenImageNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,7 @@
 		DED39C431C96FADC003A9F49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEF5CCA71C97018B005433B3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DEF5CCA91C970EED005433B3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DEF5CCAD1C979B0C005433B3 /* ShortenImageNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortenImageNetwork.swift; sourceTree = "<group>"; };
 		FBD68B1B4EF03C21D126BB75 /* Pods-ShortenImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortenImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortenImage/Pods-ShortenImage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +138,7 @@
 				DED39C2A1C96FADC003A9F49 /* LaunchScreen.storyboard */,
 				DED39C2D1C96FADC003A9F49 /* Info.plist */,
 				DEF5CCA91C970EED005433B3 /* ImageCollectionViewCell.swift */,
+				DEF5CCAD1C979B0C005433B3 /* ShortenImageNetwork.swift */,
 			);
 			path = ShortenImage;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF5CCAE1C979B0C005433B3 /* ShortenImageNetwork.swift in Sources */,
 				DEF5CCAA1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */,
 				DED39C221C96FADC003A9F49 /* AppDelegate.swift in Sources */,
 				DEF5CCA81C97018B005433B3 /* HomeViewController.swift in Sources */,
@@ -350,6 +356,7 @@
 			files = (
 				DEF5CCAB1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */,
 				DED39C371C96FADC003A9F49 /* ShortenImageTests.swift in Sources */,
+				DEF5CCAF1C979B0C005433B3 /* ShortenImageNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +366,7 @@
 			files = (
 				DEF5CCAC1C970EED005433B3 /* ImageCollectionViewCell.swift in Sources */,
 				DED39C421C96FADC003A9F49 /* ShortenImageUITests.swift in Sources */,
+				DEF5CCB01C979B0C005433B3 /* ShortenImageNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

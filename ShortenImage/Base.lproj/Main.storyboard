@@ -86,6 +86,7 @@
                     </view>
                     <connections>
                         <outlet property="imageCollectionView" destination="wzX-98-4XN" id="S8s-it-atN"/>
+                        <outlet property="shortenLinkTF" destination="yBQ-eZ-ziY" id="Fim-Fy-Gjr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
