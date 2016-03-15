@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 
 struct NetworkConst {
-    static let host = "http://localhost:4000/api"
+    static let host = "https://shortenimage.herokuapp.com/api"
     static let createGroupAction = "/create-group"
     static let getGroupAction = "/group"
 }

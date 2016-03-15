@@ -71,7 +71,7 @@ extension HomeViewController: FPPickerControllerDelegate {
 
     internal func createGroup() {
         let imageURLs = self.pickedImages.map { (mediaInfo) -> String in
-            return mediaInfo.remoteURL.path!
+            return mediaInfo.remoteURL.absoluteString
         }
         ShortenImageNetwork().createGroup(imageURLs,completion: { [unowned self] (link) -> Void in
             self.shortenLinkTF.text = link
