@@ -146,3 +146,14 @@ extension HomeViewController: UITextFieldDelegate {
         return predicate.evaluateWithObject(stringURL)
     }
 }
+
+extension HomeViewController {
+
+    @IBAction func shareAction(sender: AnyObject) {
+        if let link = self.shortenLinkTF.text {
+            let activityVC = UIActivityViewController(activityItems: [link], applicationActivities: nil)
+
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }
+    }
+}

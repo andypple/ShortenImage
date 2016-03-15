@@ -47,6 +47,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="cs5-O7-ARv"/>
                                                 </constraints>
                                                 <state key="normal" image="share"/>
+                                                <connections>
+                                                    <action selector="shareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m9D-ey-TNf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.32941176470588235" green="0.59999999999999998" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
