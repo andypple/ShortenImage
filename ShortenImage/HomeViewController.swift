@@ -90,7 +90,7 @@ extension HomeViewController: FPPickerControllerDelegate {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -109,6 +109,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
         return cell
     }
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let size = (CGRectGetWidth(self.view.bounds) - 8)/3
+        return CGSizeMake(size, size)
+    }
+
 }
 
 extension HomeViewController: UITextFieldDelegate {
