@@ -7,5 +7,5 @@ Give us images, we give you an url
 
 #Why you will love ShortenImage:
 - Allow to pick images from local Library, Dropbox, Facebook, Instagram, Flickr,... or search images. 
-- Automatically generate an url to view that images. You can see it on browswer or in our app.
+- Automatically generate an url to view that images. You can see it on browser or in our app.
 - Nicely photo gallery viewer both on app and web.
